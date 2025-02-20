@@ -16,8 +16,24 @@ var todos = [
 const todoApp = {
   data() {
     return {
-      todos: window.todos
+      todos: window.todos,
+      newTodo: {
+        done: false
+      }
     };
+  },
+  methods: {
+    addTodo: function() {
+      if(this.newTodo.text) {
+        this.todos.push(this.newTodo);
+        this.newTodo = {
+          done: false
+        };
+
+        return
+      }
+      alert('Não é possível criar uma tarefa sem um texto.');
+    }
   }
 };
 
