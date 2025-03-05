@@ -14,7 +14,7 @@ const todoApp = {
         this.newTodo = {
           done: false
         };
-
+        localStorage.setItem('todos', JSON.stringify(this.todos));
         return
       }
       alert('Não é possível criar uma tarefa sem um texto.');
